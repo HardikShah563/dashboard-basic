@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Basic</title>
+    <!-- Including StyleSheet -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Including Script -->
+    <script src="./index.js" defer></script>
+    <!-- Including Icons -->
+    <!-- Including Icons -->
+    <script src="https://kit.fontawesome.com/6d232ec003.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="aside">
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/white-pms.png" alt="white logo">
+                    <h2>Portfolio</h2>
+                </div>
+                <div class="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="#">
+                    <i class="fa-solid fa-grip"></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#" class="">
+                    <i class="fa-regular fa-user"></i>
+                    <h3>Customers</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <h3>Orders</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-regular fa-envelope"></i>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-list-check"></i>
+                    <h3>Products</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-bug"></i>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-plus"></i>
+                    <h3>Add Product</h3>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+        <!-- END OF ASIDE -->
+
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="date">
+                <input type="date" name="date" id="date">
+            </div>
+
+            <div class="insights">
+                <div class="sales">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Sales</h3>
+                            <h1>₹25,000</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="36" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- END OF SALES -->
+
+                <div class="expenses">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Income</h3>
+                            <h1>₹14,160</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="36" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- END OF EXPENSES -->
+
+                <div class="income">
+                    <i class="fa-solid fa-chart-area"></i>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Total Expenses</h3>
+                            <h1>₹25,000</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx="38" cy="36" r="36"></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Last 24 Hours</small>
+                </div>
+                <!-- END OF INCOME -->
+            </div>
+            <!-- END OF INSIGHTS -->
+        </main>
+    </div>
+</body>
+</html>
