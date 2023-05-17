@@ -32,6 +32,17 @@
     --box-shadow-hover: 0 3rem 4rem var(--color-light);
 }
 
+/* ======== DARK THEME VARIABLES ======== */
+.dark-theme-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+
+    --box-shadow: 0 2rem 3rem var(--color-background);
+    --box-shadow-hover: 0 3rem 4rem var(--color-background);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -129,7 +140,8 @@ b {
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .aside {
@@ -159,7 +171,7 @@ b {
 }
 
 .aside .sidebar {
-    background-color: white;
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -246,8 +258,7 @@ main .date input[type='date'] {
 }
 
 main .insights {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 1.6rem;
 }
 
@@ -260,6 +271,11 @@ main .insights > div {
     transition: all 300ms ease;
 }
 
+main .insights div .middle div h1, 
+main .insights div .middle div h3 {
+    color: var(--color-dark);
+}
+
 main .insights > div:hover {
     transform: scale(1.01);
     box-shadow: var(--box-shadow-hover);
@@ -267,7 +283,7 @@ main .insights > div:hover {
 
 main .insights > div i {
     font-size: 28px;
-    color: var(--color-white);  
+    color: var(--color-white);
     background-color: var(--color-primary);
     padding: 0.5rem;
     border-radius: var(--border-radius-1);
@@ -350,8 +366,8 @@ main .insights small {
 }
 
 /* ==== RECENT ORDERS ==== */
-main .recent-orders {
-    margin-top: 2rem;
+main .recent-orders .recent-orders-title{
+    margin: 2rem 0 1rem 0;
 }
 
 main .recent-orders table {
@@ -373,7 +389,6 @@ main table tbody td {
 main table tbody tr:last-child td {
     border: none;
 }
-
 
 main .recent-orders a {
     text-align: center;
@@ -537,39 +552,18 @@ main .recent-orders a {
 }
 
 /* ======== MEDIA QUERIES FOR BIG TABLET SCREENS ======== */
-@media screen and (max-width: 1200px) {
-    .container {
-        width: 94%;
-        grid-template-columns: 7rem auto 23rem;
-    }
-
-    .aside .logo h2 {
-        display: none;
-    }
-
-    .aside .sidebar h3 {
-        display: none;
-    }
-
-    .aside .sidebar a {
-        width: 5.6rem;
+@media screen and (max-width: 1300px) {
+    main {
+        margin-inline: auto;
     }
 
     main .insights {
-        grid-template-columns: 1fr;
-        gap: 0;
+        flex-direction: column;
     }
 
     main .recent-orders {
-        width: 94%;
         position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        margin: 2rem 0 0 8.8rem;
-    }
-
-    main .recent-orders table {
-        width: 84vw;
+        width: 70vw;
     }
 
     main table thead tr th:last-child, 
@@ -583,16 +577,43 @@ main .recent-orders a {
     }
 }
 
+@media screen and (max-width: 1100px) {
+    main {
+        flex-wrap: nowrap;
+    }
+
+    .insights div {
+        width: 100%;
+    }
+
+    .aside .logo h2 {
+        display: none;
+    }
+
+    .aside .sidebar h3 {
+        display: none;
+    }
+
+    .aside .sidebar a {
+        width: 5.6rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    main {
+        flex-wrap: nowrap;
+    }
+}
+
 /* ======== MEDIA QUERIES FOR SMALL TABLET/MOBILE SCREENS ======== */
 @media screen and (max-width: 800px) {
     .container {
         width: 100%;
-        grid-template-columns: 1fr;
     }
 
     .aside {
         position: fixed;
-        left: 0;
+        left: -100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
@@ -600,6 +621,13 @@ main .recent-orders a {
         height: 100vh;
         padding-right: var(--card-padding);
         display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to {
+            left: 0;
+        }
     }
 
     .aside .logo {
